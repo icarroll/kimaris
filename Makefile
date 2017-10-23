@@ -3,7 +3,7 @@ LIBS =
 CFLAGS = -O -g -std=c11 -pedantic -Wall ${INCS}
 LDFLAGS = ${LIBS}
 
-all: run_tests test
+all: run_tests test kimaris
 
 run_tests: run_tests.o kimaris.o
 	strip -N main kimaris.o -o _kimaris.o
@@ -11,3 +11,6 @@ run_tests: run_tests.o kimaris.o
 
 test:
 	./run_tests
+
+clean:
+	rm *.o run_tests kimaris
